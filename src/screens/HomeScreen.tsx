@@ -1,10 +1,10 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { IncreaseTotalLikes } from "../store/actions/DataActions";
+import { IncreaseTotalLikes, IncreaseTotalLikesByAmount } from "../store/actions/DataActions";
 
 const HomeScreen = () => {
-  const totalLikes = useSelector((state) => state.totalLikes);
-  const userName = useSelector((state) => state.userName);
+  const totalLikes = useSelector((state) => state.dataReducer.totalLikes);
+  const userName = useSelector((state) => state.dataReducer.userName);
   const dispatch = useDispatch();
 
   return (
@@ -13,6 +13,7 @@ const HomeScreen = () => {
       <Text style={styles.text}>Total Likes: {totalLikes}</Text>
       <Text style={styles.text}>User Name: {userName}</Text>
       <Button title="+" onPress={() => dispatch(IncreaseTotalLikes())}/>
+      <Button title="By Amount" onPress={() => dispatch(IncreaseTotalLikesByAmount(50))}/>
     </View>
   );
 };

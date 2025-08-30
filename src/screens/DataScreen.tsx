@@ -3,8 +3,8 @@ import React from "react";
 import { useSelector} from "react-redux";
 
 const DataScreen = () => {
-  const totalLikes = useSelector((state) => state.totalLikes);
-  const userName = useSelector((state) => state.userName);
+  const totalLikes = useSelector((state) => state.dataReducer.totalLikes);
+  const userName = useSelector((state) => state.dataReducer.userName);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Data Screen</Text>

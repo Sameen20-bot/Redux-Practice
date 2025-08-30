@@ -1,4 +1,4 @@
-import { INCREASE_TOTAL_LIKES } from "../type";
+import { INCREASE_TOTAL_LIKES, INCREASE_TOTAL_LIKES_BY_AMOUNT } from "../type";
 
 const initialState = {
   totalLikes: 9,
@@ -9,6 +9,8 @@ export const dataReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREASE_TOTAL_LIKES:
       return { ...state, totalLikes: state.totalLikes + 1 };
+    case INCREASE_TOTAL_LIKES_BY_AMOUNT:
+      return { ...state, totalLikes: state.totalLikes + action.payload };
     default:
       return state;
   }
