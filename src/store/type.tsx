@@ -1,0 +1,1 @@
+export const INCREASE_TOTAL_LIKES = 'Increase-Total-Likes'
