@@ -1,10 +1,11 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { IncreaseTotalLikes, IncreaseTotalLikesByAmount } from "../store/actions/DataActions";
+import { RootState } from "../store/store";
 
 const HomeScreen = () => {
-  const totalLikes = useSelector((state) => state.dataReducer.totalLikes);
-  const userName = useSelector((state) => state.dataReducer.userName);
+  const totalLikes = useSelector((state: RootState) => state.dataReducer.totalLikes);
+  const userName = useSelector((state: RootState) => state.dataReducer.userName);
   const dispatch = useDispatch();
 
   return (

@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useSelector} from "react-redux";
+import { RootState } from "../store/store";
 
 const DataScreen = () => {
-  const totalLikes = useSelector((state) => state.dataReducer.totalLikes);
-  const userName = useSelector((state) => state.dataReducer.userName);
+  const totalLikes = useSelector((state: RootState) => state.dataReducer.totalLikes);
+  const userName = useSelector((state: RootState) => state.dataReducer.userName);
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Data Screen</Text>
